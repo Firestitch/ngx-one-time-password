@@ -1,3 +1,6 @@
+@use '~@firestitch/datepicker/styles' as fs-date-picker;
+@use '~@firestitch/style/styles' as fs-style;
+
 @import '../tools/assets/playground.scss';
 @import '~@firestitch/message/styles';
 @import "~@firestitch/drawer/styles";

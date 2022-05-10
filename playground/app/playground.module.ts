@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { FsExampleModule } from '@firestitch/example';
 import { FsMessageModule } from '@firestitch/message';
-import { FsSigninModule } from '@firestitch/signin';
+import { FsOneTimePasswordModule } from '@firestitch/one-time-password';
 import { FsLabelModule } from '@firestitch/label';
 import { FsStoreModule } from '@firestitch/store';
 
@@ -17,7 +17,8 @@ import {
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
-import { SigninsComponent } from './components/signins';
+import { OneTimePassswordsComponent } from './components/one-time-passwords/one-time-passwords.component';
+import { FsDatePickerModule } from '@firestitch/datepicker';
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
@@ -27,12 +28,13 @@ const routes: Routes = [
   bootstrap: [ AppComponent ],
   imports: [
     BrowserModule,
-    FsSigninModule,
+    FsOneTimePasswordModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
     FsLabelModule,
     FsStoreModule,
+    FsDatePickerModule.forRoot(),
     FsExampleModule.forRoot(),
     FsMessageModule.forRoot(),
     ToastrModule.forRoot({ preventDuplicates: true }),
@@ -41,7 +43,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ExamplesComponent,
-    SigninsComponent,
+    OneTimePassswordsComponent,
   ],
 })
 export class PlaygroundModule {
