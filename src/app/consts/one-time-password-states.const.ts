@@ -1,4 +1,4 @@
-import { OneTimePasswordState } from '../enums';
+import { OneTimePasswordState } from '../enums/one-time-password-state.enum';
 
 export const OneTimePasswordStates = [
   { name: 'Pending', value: OneTimePasswordState.Pending },

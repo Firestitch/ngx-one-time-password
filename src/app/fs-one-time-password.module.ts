@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -16,7 +15,8 @@ import { FsDateModule } from '@firestitch/date';
 import { FsAutocompleteModule } from '@firestitch/autocomplete';
 import { FsDatePickerModule } from '@firestitch/datepicker';
 
-import { OneTimePasswordsComponent, OneTimePasswordComponent } from './components';
+import { OneTimePasswordsComponent } from './components/one-time-passwords/one-time-passwords.component';
+import { OneTimePasswordComponent } from './components/one-time-password/one-time-password.component';
 
 
 @NgModule({

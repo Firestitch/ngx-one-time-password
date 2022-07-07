@@ -12,17 +12,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { FsListComponent, FsListConfig } from '@firestitch/list';
 import { index } from '@firestitch/common';
 import { parse } from '@firestitch/date';
+import { ItemType } from '@firestitch/filter';
 
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 import { isAfter } from 'date-fns';
 
-import { OneTimePasswordStates } from '../../consts';
-import { OneTimePasswordState } from '../../enums';
+import { OneTimePasswordStates } from '../../consts/one-time-password-states.const';
+import { OneTimePasswordState } from '../../enums/one-time-password-state.enum';
 
-import { OneTimePasswordComponent } from '../one-time-password';
-import { ItemType } from '@firestitch/filter';
+import { OneTimePasswordComponent } from '../one-time-password/one-time-password.component';
 
 
 @Component({
