@@ -14,8 +14,10 @@ import { FsSkeletonModule } from '@firestitch/skeleton';
 import { FsDateModule } from '@firestitch/date';
 import { FsAutocompleteModule } from '@firestitch/autocomplete';
 import { FsDatePickerModule } from '@firestitch/datepicker';
+import { FsClipboardModule } from '@firestitch/clipboard';
 
 import { OneTimePasswordsComponent } from './components/one-time-passwords/one-time-passwords.component';
+import { OneTimePasswordDialogComponent } from './components/one-time-password-dialog/one-time-password-dialog.component';
 import { OneTimePasswordComponent } from './components/one-time-password/one-time-password.component';
 
 
@@ -31,6 +33,7 @@ import { OneTimePasswordComponent } from './components/one-time-password/one-tim
 
     FsListModule,
     FsDateModule,
+    FsClipboardModule,
     FsDialogModule,
     FsFormModule,
     FsDatePickerModule,
@@ -39,11 +42,12 @@ import { OneTimePasswordComponent } from './components/one-time-password/one-tim
   ],
   declarations: [
     OneTimePasswordsComponent,
+    OneTimePasswordDialogComponent,
     OneTimePasswordComponent,
   ],
   exports: [
-    OneTimePasswordsComponent,
     OneTimePasswordComponent,
+    OneTimePasswordsComponent,
   ],
 })
 export class FsOneTimePasswordModule { }

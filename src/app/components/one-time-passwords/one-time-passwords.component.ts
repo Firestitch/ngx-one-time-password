@@ -22,7 +22,7 @@ import { isAfter } from 'date-fns';
 import { OneTimePasswordStates } from '../../consts/one-time-password-states.const';
 import { OneTimePasswordState } from '../../enums/one-time-password-state.enum';
 
-import { OneTimePasswordComponent } from '../one-time-password/one-time-password.component';
+import { OneTimePasswordDialogComponent } from '../one-time-password-dialog/one-time-password-dialog.component';
 
 
 @Component({
@@ -60,7 +60,7 @@ export class OneTimePasswordsComponent implements OnInit, OnDestroy {
     this.verify()
       .pipe(
         switchMap(() => {
-          return this._dialog.open(OneTimePasswordComponent, {
+          return this._dialog.open(OneTimePasswordDialogComponent, {
             data: {
               accountsFetch: this.accountsFetch,
               oneTimePasswordSave: this.oneTimePasswordSave,
