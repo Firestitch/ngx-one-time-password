@@ -4,6 +4,7 @@ import {
   OnInit,
   OnDestroy,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -34,6 +35,7 @@ export class OneTimePasswordDialogComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
     private _message: FsMessage,
+    private _cdRef: ChangeDetectorRef,
   ) {
     this._accountsFetch = _data.accountsFetch;
     this._oneTimePasswordSave = _data.oneTimePasswordSave;
@@ -70,6 +72,7 @@ export class OneTimePasswordDialogComponent implements OnInit, OnDestroy {
         tap((response) => {
           this.oneTimePassword = response.oneTimePassword;
           this.password = response.password;
+          this._cdRef.markForCheck();
           this._message.success('Generated one time password');
         }),
       );
