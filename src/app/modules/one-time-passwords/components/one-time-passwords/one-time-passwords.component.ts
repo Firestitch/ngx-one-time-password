@@ -19,8 +19,8 @@ import { Observable, Subject } from 'rxjs';
 
 import { isAfter } from 'date-fns';
 
-import { OneTimePasswordStates } from '../../consts/one-time-password-states.const';
-import { OneTimePasswordState } from '../../enums/one-time-password-state.enum';
+import { OneTimePasswordStates } from '../../../../consts/one-time-password-states.const';
+import { OneTimePasswordState } from '../../../../enums/one-time-password-state.enum';
 
 import { OneTimePasswordDialogComponent } from '../one-time-password-dialog/one-time-password-dialog.component';
 

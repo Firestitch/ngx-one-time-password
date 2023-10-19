@@ -1,4 +1,5 @@
-export { FsOneTimePasswordModule } from './app/fs-one-time-password.module';
+export { FsOneTimePasswordModule } from './app/modules/one-time-passwords/fs-one-time-password.module';
+export { FsOneTimePasswordCodeModule } from './app/modules/one-time-password-code/fs-one-time-password-code.module';
 
-export { OneTimePasswordsComponent } from './app/components/one-time-passwords/one-time-passwords.component';
-export { OneTimePasswordComponent } from './app/components/one-time-password/one-time-password.component';
+export { OneTimePasswordsComponent } from './app/modules/one-time-passwords/components';
+export { OneTimePasswordCodeComponent } from './app/modules/one-time-password-code/components';

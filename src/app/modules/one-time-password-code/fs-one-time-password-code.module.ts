@@ -15,39 +15,20 @@ import { FsDateModule } from '@firestitch/date';
 import { FsAutocompleteModule } from '@firestitch/autocomplete';
 import { FsDatePickerModule } from '@firestitch/datepicker';
 import { FsClipboardModule } from '@firestitch/clipboard';
-
-import { OneTimePasswordsComponent } from './components/one-time-passwords/one-time-passwords.component';
-import { OneTimePasswordDialogComponent } from './components/one-time-password-dialog/one-time-password-dialog.component';
-import { OneTimePasswordComponent } from './components/one-time-password/one-time-password.component';
+import { OneTimePasswordCodeComponent } from './components';
 
 
 @NgModule({
   imports: [
-    FormsModule,
     CommonModule,
 
-    MatDialogModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-
-    FsListModule,
-    FsDateModule,
     FsClipboardModule,
-    FsDialogModule,
-    FsFormModule,
-    FsDatePickerModule,
-    FsSkeletonModule,
-    FsAutocompleteModule,
   ],
   declarations: [
-    OneTimePasswordsComponent,
-    OneTimePasswordDialogComponent,
-    OneTimePasswordComponent,
+    OneTimePasswordCodeComponent,
   ],
   exports: [
-    OneTimePasswordComponent,
-    OneTimePasswordsComponent,
+    OneTimePasswordCodeComponent,
   ],
 })
-export class FsOneTimePasswordModule { }
+export class FsOneTimePasswordCodeModule { }

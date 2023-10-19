@@ -10,8 +10,6 @@ import { FsOneTimePasswordModule } from '@firestitch/one-time-password';
 import { FsLabelModule } from '@firestitch/label';
 import { FsStoreModule } from '@firestitch/store';
 
-import { ToastrModule } from 'ngx-toastr';
-
 import { AppMaterialModule } from './material.module';
 import {
   ExamplesComponent
@@ -37,7 +35,6 @@ const routes: Routes = [
     FsDatePickerModule.forRoot(),
     FsExampleModule.forRoot(),
     FsMessageModule.forRoot(),
-    ToastrModule.forRoot({ preventDuplicates: true }),
     RouterModule.forRoot(routes),
   ],
   declarations: [
