@@ -2,7 +2,7 @@
   "name": "@firestitch/one-time-password",
   "title": "One Time Password",
   "description": "@firestitch/one-time-password",
-  "version": "13.0.0",
+  "version": "13.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-one-time-password"
