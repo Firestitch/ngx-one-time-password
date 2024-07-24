@@ -61,6 +61,7 @@ export class OneTimePasswordsComponent implements OnInit, OnDestroy {
       .pipe(
         switchMap(() => {
           return this._dialog.open(OneTimePasswordDialogComponent, {
+            autoFocus: false,
             data: {
               accountsFetch: this.accountsFetch,
               oneTimePasswordSave: this.oneTimePasswordSave,
