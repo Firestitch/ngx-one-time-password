@@ -1,27 +1,26 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  Input,
+  OnDestroy,
   OnInit,
   ViewChild,
-  ChangeDetectionStrategy,
-  OnDestroy,
-  Input,
 } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 
-import { FsListComponent, FsListConfig } from '@firestitch/list';
 import { index } from '@firestitch/common';
 import { parse } from '@firestitch/date';
 import { ItemType } from '@firestitch/filter';
+import { FsListComponent, FsListConfig } from '@firestitch/list';
 
-import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
 
 import { isAfter } from 'date-fns';
 
 import { OneTimePasswordStates } from '../../../../consts/one-time-password-states.const';
 import { OneTimePasswordState } from '../../../../enums/one-time-password-state.enum';
-
 import { OneTimePasswordDialogComponent } from '../one-time-password-dialog/one-time-password-dialog.component';
 
 
@@ -43,14 +42,14 @@ export class OneTimePasswordsComponent implements OnInit, OnDestroy {
   @Input() public oneTimePasswordSave: (oneTimePassword) => Observable<any>;
 
   public listConfig: FsListConfig;
-  public OneTimePasswordStates = index(OneTimePasswordStates,'value','name');
+  public OneTimePasswordStates = index(OneTimePasswordStates, 'value', 'name');
   public OneTimePasswordState = OneTimePasswordState;
 
   private _destroy$ = new Subject<void>();
 
   constructor(
     private _dialog: MatDialog,
-  ) {}
+  ) { }
 
   public ngOnInit(): void {
     this._initListConfig();
@@ -85,7 +84,7 @@ export class OneTimePasswordsComponent implements OnInit, OnDestroy {
   private _initListConfig(): void {
     this.listConfig = {
       sort: { value: 'create_date', direction: 'desc' },
-      sorts: [{ value: 'used_date', name: 'Used Date' }],
+      sorts: [{ value: 'used_date', name: 'Used date' }],
       actions: [
         {
           label: 'Create',
@@ -101,10 +100,10 @@ export class OneTimePasswordsComponent implements OnInit, OnDestroy {
           name: 'keyword',
         },
         {
-          label: ['From Create Date', 'To Create Date'],
+          label: ['From create date', 'To create date'],
           type: ItemType.DateRange,
           name: 'createDate',
-        }
+        },
       ],
       rowActions: [
         {
