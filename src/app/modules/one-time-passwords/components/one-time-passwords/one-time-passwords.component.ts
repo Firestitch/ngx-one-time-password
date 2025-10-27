@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 
@@ -33,6 +26,8 @@ import { OneTimePasswordDialogComponent } from '../one-time-password-dialog/one-
     imports: [FsListModule, FsDateModule],
 })
 export class OneTimePasswordsComponent implements OnInit, OnDestroy {
+  private _dialog = inject(MatDialog);
+
 
   @ViewChild(FsListComponent)
   public listComponent: FsListComponent;
@@ -48,10 +43,6 @@ export class OneTimePasswordsComponent implements OnInit, OnDestroy {
   public OneTimePasswordState = OneTimePasswordState;
 
   private _destroy$ = new Subject<void>();
-
-  constructor(
-    private _dialog: MatDialog,
-  ) { }
 
   public ngOnInit(): void {
     this._initListConfig();

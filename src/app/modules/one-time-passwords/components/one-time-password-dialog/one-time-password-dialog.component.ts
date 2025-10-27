@@ -1,11 +1,4 @@
-import {
-  Component,
-  Inject,
-  OnInit,
-  OnDestroy,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, inject } from '@angular/core';
 
 import { MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 
@@ -53,6 +46,10 @@ import { MatButton } from '@angular/material/button';
     ],
 })
 export class OneTimePasswordDialogComponent implements OnInit, OnDestroy {
+  private _data = inject(MAT_DIALOG_DATA);
+  private _message = inject(FsMessage);
+  private _cdRef = inject(ChangeDetectorRef);
+
 
   public oneTimePassword = null;
   public account;
@@ -62,11 +59,9 @@ export class OneTimePasswordDialogComponent implements OnInit, OnDestroy {
   private _oneTimePasswordSave: (oneTimePassword) => Observable<any>;
   private _destroy$ = new Subject<void>();
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) private _data: any,
-    private _message: FsMessage,
-    private _cdRef: ChangeDetectorRef,
-  ) {
+  constructor() {
+    const _data = this._data;
+
     this._accountsFetch = _data.accountsFetch;
     this._oneTimePasswordSave = _data.oneTimePasswordSave;
   }
