@@ -7,7 +7,7 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 
 import { FsMessage } from '@firestitch/message';
 
@@ -15,12 +15,42 @@ import { Subject, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 import { addDays } from 'date-fns';
+import { FsSkeletonModule } from '@firestitch/skeleton';
+import { FormsModule } from '@angular/forms';
+import { FsFormModule } from '@firestitch/form';
+import { FsDialogModule } from '@firestitch/dialog';
+import { CdkScrollable } from '@angular/cdk/scrolling';
+import { FsAutocompleteModule } from '@firestitch/autocomplete';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { FsDatePickerModule } from '@firestitch/datepicker';
+import { OneTimePasswordCodeComponent } from '../../../one-time-password-code/components/one-time-password-code/one-time-password-code.component';
+import { MatButton } from '@angular/material/button';
 
 
 @Component({
-  templateUrl: './one-time-password-dialog.component.html',
-  styleUrls: ['./one-time-password-dialog.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './one-time-password-dialog.component.html',
+    styleUrls: ['./one-time-password-dialog.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        FsSkeletonModule,
+        FormsModule,
+        FsFormModule,
+        FsDialogModule,
+        MatDialogTitle,
+        CdkScrollable,
+        MatDialogContent,
+        FsAutocompleteModule,
+        MatFormField,
+        MatLabel,
+        MatInput,
+        FsDatePickerModule,
+        OneTimePasswordCodeComponent,
+        MatDialogActions,
+        MatButton,
+        MatDialogClose,
+    ],
 })
 export class OneTimePasswordDialogComponent implements OnInit, OnDestroy {
 

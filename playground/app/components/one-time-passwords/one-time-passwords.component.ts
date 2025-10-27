@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
+import { OneTimePasswordsComponent } from '../../../../src/app/modules/one-time-passwords/components/one-time-passwords/one-time-passwords.component';
 
 
 @Component({
-  selector: 'app-one-time-passwords',
-  templateUrl: './one-time-passwords.component.html',
-  styleUrls: ['./one-time-passwords.component.scss']
+    selector: 'app-one-time-passwords',
+    templateUrl: './one-time-passwords.component.html',
+    styleUrls: ['./one-time-passwords.component.scss'],
+    standalone: true,
+    imports: [OneTimePasswordsComponent]
 })
 export class OneTimePassswordsComponent implements OnInit {
 

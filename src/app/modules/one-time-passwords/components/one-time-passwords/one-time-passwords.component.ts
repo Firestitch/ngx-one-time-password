@@ -10,9 +10,9 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 
 import { index } from '@firestitch/common';
-import { parse } from '@firestitch/date';
+import { parse, FsDateModule } from '@firestitch/date';
 import { ItemType } from '@firestitch/filter';
-import { FsListComponent, FsListConfig } from '@firestitch/list';
+import { FsListComponent, FsListConfig, FsListModule } from '@firestitch/list';
 
 import { Observable, Subject } from 'rxjs';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
@@ -25,10 +25,12 @@ import { OneTimePasswordDialogComponent } from '../one-time-password-dialog/one-
 
 
 @Component({
-  selector: 'fs-one-time-passwords',
-  templateUrl: './one-time-passwords.component.html',
-  styleUrls: ['./one-time-passwords.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-one-time-passwords',
+    templateUrl: './one-time-passwords.component.html',
+    styleUrls: ['./one-time-passwords.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FsListModule, FsDateModule],
 })
 export class OneTimePasswordsComponent implements OnInit, OnDestroy {
 
